@@ -13,8 +13,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
-
 spark = SparkSession.builder.master('local[*]').getOrCreate()
 
 df_ativos = spark.read.csv("Relatorio_cadop.csv", inferSchema=True, header=True, sep=";", encoding="UTF-8")
@@ -46,7 +44,6 @@ def grafico(tabela_pd, anuncio, tema, total, name):
         valor = barra.get_height()
         plt.text(barra.get_x() + barra.get_width()/2, valor, int(valor), ha='center', va='bottom')
     
-    plt.tight_layout()
     plt.show()
 
 def graficoCronologico(df_reclamacoes, registro_ans):
