@@ -269,7 +269,7 @@ def main():
                 print("\nOpção inválida. Tente novamente.")
         
         except Exception as e:
-            print(f"Aconteceu um erro: {e}. Tente novamente.")
+            print(f"Erro: {e}.")
 
 if __name__ == "__main__":
     main()
